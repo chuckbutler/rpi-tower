@@ -88,3 +88,6 @@ df -h
 
 This will show the partitions and the space, you’ll see the full SSD  space
 available now.
+
+
+![pi tower](http://dasroot.net/images/2016/oct/pi_tower_small.jpg)
