@@ -6,6 +6,8 @@ set -e
 
 # Create a file /etc/dpkg/dpkg.cfg.d/01_nodoc which specifies the desired filters. Example:
 
+if [ ! -f /etc/dpkg/dpkg.cfg.d/01_nodoc ]
+then
 cat << EOF > /etc/dpkg/dpkg.cfg.d/01_nodoc
 path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
@@ -17,8 +19,9 @@ path-exclude /usr/share/info/*
 path-exclude /usr/share/lintian/*
 path-exclude /usr/share/linda/*
 EOF
+fi
 
 apt update
 apt upgrade -y
 
-apt install -y htop vim git ntp tmux
+apt install -y htop vim git ntp tmux lshw
